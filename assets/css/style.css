@@ -85,17 +85,26 @@ td{font-size: 0.85rem; text-align: center; letter-spacing: 0.03rem;}
   transition: ease-in-out 0.25s;
 }
 
-#manage-collapse-logo, #transaction-collapse-logo{
+.dropdown-item.disabled{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.dropdown-logo{
+  width: 1.5rem;
+}
+
+#transaction-collapse-logo, #customer-collapse-logo{
   font-size: 0.75rem;
   margin-left: 0.25rem;
   transition: ease-in-out 0.25s;
 }
 
-#manage-collapse-btn:focus, #transaction-collapse-btn:focus{
+#transaction-collapse-btn:focus, #customer-collapse-btn:focus{
   outline: none;
 }
 
-#manage-collapse-logo.collapse-active, #transaction-collapse-logo.collapse-active{
+#transaction-collapse-logo.collapse-active, #customer-collapse-logo.collapse-active{
   transform: rotateZ(-180deg);
 }
 

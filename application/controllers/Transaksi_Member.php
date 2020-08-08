@@ -9,7 +9,7 @@ class Transaksi_Member extends CI_Controller {
 	}
 
 	public function index(){
-		$data['page_name'] = ["transaksi", "transaksi_member"];
+		$data['page_name'] = ["data_transaksi", "transaksi_member"];
 		$this->load->view('v_base_header', $data);
 		$this->load->view('v_transaksi_member');
 		$this->load->view('v_base_footer');

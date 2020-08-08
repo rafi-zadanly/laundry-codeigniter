@@ -9,7 +9,7 @@ class Data_Pengguna extends CI_Controller {
 	}
 
 	public function index(){
-		$data['page_name'] = ["manajemen_data", "data_pengguna"];
+		$data['page_name'] = "data_pengguna";
 		$this->load->view('v_base_header', $data);
 		$this->load->view('v_data_pengguna');
 		$this->load->view('v_base_footer');

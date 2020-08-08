@@ -46,10 +46,10 @@
             options: {}
         });
         <?php endif; ?>
-        <?php if($page_name[0] == "manajemen_data"): ?>
-            $('#manage-collapse').collapse('show');
+        <?php if($page_name[0] == "data_pelanggan"): ?>
+            $('#customer-collapse').collapse('show');
         <?php endif; ?>
-        <?php if($page_name[0] == "transaksi"): ?>
+        <?php if($page_name[0] == "data_transaksi"): ?>
             $('#transaction-collapse').collapse('show');
         <?php endif; ?>
     </script>

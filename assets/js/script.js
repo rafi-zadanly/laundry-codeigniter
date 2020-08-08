@@ -7,8 +7,8 @@ $(function () {
     $('.content-loader-wrapper').addClass('hide-active');
 });
 
-$('#manage-collapse-btn').click(function () { 
-    $('#manage-collapse-logo').toggleClass('collapse-active');
+$('#customer-collapse-btn').click(function () { 
+    $('#customer-collapse-logo').toggleClass('collapse-active');
 });
 
 $('#transaction-collapse-btn').click(function () { 

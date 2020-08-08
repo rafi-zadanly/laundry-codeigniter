@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Data_Member extends CI_Controller {
+class Paket_Laundry extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -9,9 +9,9 @@ class Data_Member extends CI_Controller {
 	}
 
 	public function index(){
-		$data['page_name'] = ["data_pelanggan", "data_member"];
+		$data['page_name'] = "paket_laundry";
 		$this->load->view('v_base_header', $data);
-		$this->load->view('v_data_member');
+		$this->load->view('v_paket_laundry');
 		$this->load->view('v_base_footer');
 	}
 	

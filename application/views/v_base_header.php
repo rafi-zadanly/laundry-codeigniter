@@ -31,32 +31,29 @@
                 <a href="<?= site_url(); ?>/dasbor" class="list-group-item list-group-item-action <?php if($page_name == "dasbor"){echo 'active disabled';} ?>">
                     <i class="fa fa-tachometer-alt side-nav-icon" aria-hidden="true"></i>Dasbor
                 </a>
-                <a href="<?= site_url(); ?>/toko" class="list-group-item list-group-item-action <?php if($page_name == "toko"){echo 'active disabled';} ?>">
-                    <i class="fa fa-store side-nav-icon" aria-hidden="true"></i>Toko
+                <a href="<?= site_url(); ?>/entri_transaksi" class="list-group-item list-group-item-action <?php if($page_name == "entri_transaksi"){echo 'active disabled';} ?>">
+                    <i class="fa fa-credit-card side-nav-icon" aria-hidden="true"></i>Entri Transaksi
                 </a>
-                <a href="<?= site_url(); ?>/paket" class="list-group-item list-group-item-action <?php if($page_name == "paket"){echo 'active disabled';} ?>">
-                    <i class="fa fa-box side-nav-icon" aria-hidden="true"></i>Paket
+                <a href="<?= site_url(); ?>/paket_laundry" class="list-group-item list-group-item-action <?php if($page_name == "paket_laundry"){echo 'active disabled';} ?>">
+                    <i class="fa fa-box side-nav-icon" aria-hidden="true"></i>Paket Laundry
                 </a>
-                <button class="list-group-item list-group-item-action <?php if($page_name[0] == "manajemen_data"){echo 'active';} ?>" id="manage-collapse-btn" type="button" data-toggle="collapse" data-target="#manage-collapse" aria-expanded="false" aria-controls="manage-collapse">
-                    <i class="fa fa-user-cog side-nav-icon" aria-hidden="true"></i>Manajemen Data<i class="fa fa-chevron-down float-right mt-1 <?php if($page_name[0] == "manajemen_data"){echo 'collapse-active';} ?>" aria-hidden="true" id="manage-collapse-logo"></i>
+                <button class="list-group-item list-group-item-action <?php if($page_name[0] == "data_pelanggan"){echo 'active';} ?>" id="customer-collapse-btn" type="button" data-toggle="collapse" data-target="#customer-collapse" aria-expanded="false" aria-controls="customer-collapse">
+                    <i class="fa fa-user-cog side-nav-icon" aria-hidden="true"></i>Data Pelanggan<i class="fa fa-chevron-down float-right mt-1 <?php if($page_name[0] == "data_pelanggan"){echo 'collapse-active';} ?>" aria-hidden="true" id="customer-collapse-logo"></i>
                 </button>
-                <div class="collapse" id="manage-collapse">
+                <div class="collapse" id="customer-collapse">
                     <div class="card card-body rounded-0 p-0">
                         <div class="card-text">
                             <a href="<?= site_url(); ?>/data_member" class="list-group-item list-group-item-action border-0 pt-2 pb-2 <?php if($page_name[1] == "data_member"){echo 'active disabled';} ?>">
                                 <ul class="m-0"><li>Member</li></ul>
                             </a>
-                            <a href="<?= site_url(); ?>/data_pelanggan" class="list-group-item list-group-item-action border-0 pt-2 pb-2 <?php if($page_name[1] == "data_pelanggan"){echo 'active disabled';} ?>">
-                                <ul class="m-0"><li>Pelanggan</li></ul>
-                            </a>
-                            <a href="<?= site_url(); ?>/data_pengguna" class="list-group-item list-group-item-action border-0 pt-2 pb-2 <?php if($page_name[1] == "data_pengguna"){echo 'active disabled';} ?>">
-                                <ul class="m-0"><li>Pengguna</li></ul>
+                            <a href="<?= site_url(); ?>/data_non_member" class="list-group-item list-group-item-action border-0 pt-2 pb-2 <?php if($page_name[1] == "data_non_member"){echo 'active disabled';} ?>">
+                                <ul class="m-0"><li>Non-Member</li></ul>
                             </a>
                         </div>
                     </div>
                 </div>
-                <button class="list-group-item list-group-item-action <?php if($page_name[0] == "transaksi"){echo 'active';} ?>" id="transaction-collapse-btn" type="button" data-toggle="collapse" data-target="#transaction-collapse" aria-expanded="false" aria-controls="transaction-collapse">
-                    <i class="fa fa-user-cog side-nav-icon" aria-hidden="true"></i>Transaksi<i class="fa fa-chevron-down float-right mt-1 <?php if($page_name[0] == "transaksi"){echo 'collapse-active';} ?>" aria-hidden="true" id="transaction-collapse-logo"></i>
+                <button class="list-group-item list-group-item-action <?php if($page_name[0] == "data_transaksi"){echo 'active';} ?>" id="transaction-collapse-btn" type="button" data-toggle="collapse" data-target="#transaction-collapse" aria-expanded="false" aria-controls="transaction-collapse">
+                    <i class="fa fa-money-bill side-nav-icon" aria-hidden="true"></i>Data Transaksi<i class="fa fa-chevron-down float-right mt-1 <?php if($page_name[0] == "data_transaksi"){echo 'collapse-active';} ?>" aria-hidden="true" id="transaction-collapse-logo"></i>
                 </button>
                 <div class="collapse" id="transaction-collapse">
                     <div class="card card-body rounded-0 p-0">
@@ -64,12 +61,18 @@
                             <a href="<?= site_url(); ?>/transaksi_member" class="list-group-item list-group-item-action border-0 pt-2 pb-2 <?php if($page_name[1] == "transaksi_member"){echo 'active disabled';} ?>">
                                 <ul class="m-0"><li>Member</li></ul>
                             </a>
-                            <a href="<?= site_url(); ?>/transaksi_pelanggan" class="list-group-item list-group-item-action border-0 pt-2 pb-2 <?php if($page_name[1] == "transaksi_pelanggan"){echo 'active disabled';} ?>">
-                                <ul class="m-0"><li>Pelanggan</li></ul>
+                            <a href="<?= site_url(); ?>/transaksi_non_member" class="list-group-item list-group-item-action border-0 pt-2 pb-2 <?php if($page_name[1] == "transaksi_non_member"){echo 'active disabled';} ?>">
+                                <ul class="m-0"><li>Non-Member</li></ul>
                             </a>
                         </div>
                     </div>
                 </div>
+                <a href="<?= site_url(); ?>/data_pengguna" class="list-group-item list-group-item-action <?php if($page_name == "data_pengguna"){echo 'active disabled';} ?>">
+                    <i class="fa fa-user side-nav-icon" aria-hidden="true"></i>Data Pengguna
+                </a>
+                <a href="<?= site_url(); ?>/cabang_toko" class="list-group-item list-group-item-action <?php if($page_name == "cabang_toko"){echo 'active disabled';} ?>">
+                    <i class="fa fa-store side-nav-icon" aria-hidden="true"></i>Cabang Toko
+                </a>
                 <a href="<?= site_url(); ?>/laporan" class="list-group-item list-group-item-action <?php if($page_name == "laporan"){echo 'active disabled';} ?>">
                     <i class="fa fa-file side-nav-icon" aria-hidden="true"></i>Laporan
                 </a>
@@ -92,12 +95,13 @@
                                 <img src="<?= base_url(); ?>assets/img/myphoto.jpg" alt="" class="img-fluid rounded-circle user-photo">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?= site_url(); ?>/pengaturan">
-                                    <i class="fa fa-cog" aria-hidden="true"></i> Pengaturan
-                                </a>
+                                <span class="dropdown-item disabled">Muhammad Rafi Zadanly</span>
                                 <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?= site_url(); ?>/pengaturan">
+                                    <i class="fa fa-cog dropdown-logo" aria-hidden="true"></i>Pengaturan
+                                </a>
                                 <a class="dropdown-item" href="<?= site_url(); ?>/keluar">
-                                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i> Keluar
+                                    <i class="fas fa-sign-out-alt dropdown-logo" aria-hidden="true"></i>Keluar
                                 </a>
                             </div>
                         </li>

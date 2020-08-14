@@ -1,3 +1,9 @@
+<?php 
+if (!($this->session->has_userdata('logged') && $this->session->userdata('logged') == true)) {
+    $this->session->set_flashdata('failed_msg', 'Login terlebih dahulu untuk melanjutkan.');
+    redirect(base_url());
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +25,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
     <div class="d-flex" id="wrapper">
 
         <!-- Sidebar -->
@@ -30,9 +35,6 @@
             <div class="list-group list-group-flush">
                 <a href="<?= site_url(); ?>/dasbor" class="list-group-item list-group-item-action <?php if($page_name == "dasbor"){echo 'active disabled';} ?>">
                     <i class="fa fa-tachometer-alt side-nav-icon" aria-hidden="true"></i>Dasbor
-                </a>
-                <a href="<?= site_url(); ?>/entri_transaksi" class="list-group-item list-group-item-action <?php if($page_name == "entri_transaksi"){echo 'active disabled';} ?>">
-                    <i class="fa fa-credit-card side-nav-icon" aria-hidden="true"></i>Entri Transaksi
                 </a>
                 <a href="<?= site_url(); ?>/paket_laundry" class="list-group-item list-group-item-action <?php if($page_name == "paket_laundry"){echo 'active disabled';} ?>">
                     <i class="fa fa-box side-nav-icon" aria-hidden="true"></i>Paket Laundry
@@ -67,12 +69,14 @@
                         </div>
                     </div>
                 </div>
+                <?php if($this->session->userdata('status') == 'admin'): ?>
                 <a href="<?= site_url(); ?>/data_pengguna" class="list-group-item list-group-item-action <?php if($page_name == "data_pengguna"){echo 'active disabled';} ?>">
                     <i class="fa fa-user side-nav-icon" aria-hidden="true"></i>Data Pengguna
                 </a>
                 <a href="<?= site_url(); ?>/cabang_toko" class="list-group-item list-group-item-action <?php if($page_name == "cabang_toko"){echo 'active disabled';} ?>">
                     <i class="fa fa-store side-nav-icon" aria-hidden="true"></i>Cabang Toko
                 </a>
+                <?php endif; ?>
                 <a href="<?= site_url(); ?>/laporan" class="list-group-item list-group-item-action <?php if($page_name == "laporan"){echo 'active disabled';} ?>">
                     <i class="fa fa-file side-nav-icon" aria-hidden="true"></i>Laporan
                 </a>
@@ -91,16 +95,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn nav-link dropdown-toggle text-dark" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="<?= base_url(); ?>assets/img/myphoto.jpg" alt="" class="img-fluid rounded-circle user-photo">
-                            </a>
+                            </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <span class="dropdown-item disabled">Muhammad Rafi Zadanly</span>
+                                <span class="dropdown-item disabled text-center text-capitalize"><?= $this->session->userdata('nama_lengkap'); ?></span>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?= site_url(); ?>/pengaturan">
                                     <i class="fa fa-cog dropdown-logo" aria-hidden="true"></i>Pengaturan
                                 </a>
-                                <a class="dropdown-item" href="<?= site_url(); ?>/keluar">
+                                <a class="dropdown-item" href="<?= site_url(); ?>/logout">
                                     <i class="fas fa-sign-out-alt dropdown-logo" aria-hidden="true"></i>Keluar
                                 </a>
                             </div>
@@ -109,7 +113,7 @@
                 </div>
             </nav>
 
-            <div class="container-fluid poppins-font">
+            <div class="container-fluid poppins-font pb-5">
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
